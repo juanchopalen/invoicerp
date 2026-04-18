@@ -1,0 +1,27 @@
+---
+description: Protocolo ante logs de error/warning (Laravel) — analizar, explicar falla y proponer arreglo
+alwaysApply: true
+---
+
+# Logs de error y warning (InvoiceRP / Laravel)
+
+Cuando el usuario comparte contenido de log, adjunta `storage/logs/laravel.log`, o describe un fallo en ejecución, el agente debe tratarlo como señal principal de diagnóstico.
+
+## Prioridad de fuentes
+
+1. `storage/logs/laravel.log` (y otros `storage/logs/*.log` si existen).
+2. Salida de consola del usuario (artisan, tests, queue, vite).
+3. Código solo después de tener el mensaje/stack o una hipótesis clara.
+
+## Qué hacer con cada entrada ERROR o WARNING
+
+1. **Identificar nivel y canal**: `local.ERROR`, `local.WARNING`, etc.
+2. **Extraer el mensaje** y, si hay, **excepción + stack**: clase, mensaje, archivo y línea del *primer* frame de aplicación (no vendor, salvo que el fallo sea de un paquete concreto).
+3. **Describir la falla en lenguaje claro**: qué esperaba el sistema, qué pasó, en qué capa (HTTP, DB, validación, cola, etc.).
+4. **Proponer arreglo**: cambios concretos (archivos, comprobaciones, orden de middleware, migraciones, `.env`). Si falta contexto, indicar qué comando o lectura falta (por ejemplo reproducir con un test o una petición).
+
+## Comportamiento continuo
+
+- Ante síntomas de bug en backend, **asumir que puede haber una traza reciente** en `laravel.log` y **pedir o leer el log** antes de adivinar.
+- Si el usuario pega solo una línea, pedir **unas líneas de contexto** o el bloque completo del stack si el error no es obvio.
+- No cerrar el diagnóstico sin relacionar el log con **una causa probable** y **pasos de corrección o verificación**.

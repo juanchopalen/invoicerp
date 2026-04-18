@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
         }
 
         User::query()->updateOrCreate(
-            ['email' => 'admin@invoicerp.net'],
+            ['email' => 'admin@invoicerp.com.ve'],
             [
                 'name' => 'Juan Palencia',
                 'password' => Hash::make('password'),

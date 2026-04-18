@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1817c3dabbef8b2f831b46fec85a9bcd",
+    "content-hash": "710f26d1b1833e342b16508f756bf5a2",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2137,10 +2137,16 @@
         {
             "name": "juanchopalen/laravel-world",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/juanchopalen/laravel-world.git",
+                "reference": "40ac08f7af807f6e959e7b0739a3118329fa3b06"
+            },
             "dist": {
-                "type": "path",
-                "url": "packages/laravel-world",
-                "reference": "373214aa6165e3b1db357bc91da86d2be5c4fc64"
+                "type": "zip",
+                "url": "https://api.github.com/repos/juanchopalen/laravel-world/zipball/40ac08f7af807f6e959e7b0739a3118329fa3b06",
+                "reference": "40ac08f7af807f6e959e7b0739a3118329fa3b06",
+                "shasum": ""
             },
             "require": {
                 "illuminate/contracts": "^10.0||^11.0||^12.0||^13.0",
@@ -2155,6 +2161,7 @@
                 "pestphp/pest-plugin-arch": "^2.7",
                 "pestphp/pest-plugin-laravel": "^2.3"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -2229,10 +2236,16 @@
                 "laravel-world",
                 "states"
             ],
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/juanchopalen/laravel-world/tree/main"
+            },
+            "funding": [
+                {
+                    "type": "github",
+                    "url": "https://github.com/Altwaireb"
+                }
+            ],
+            "time": "2026-04-15T12:27:49+00:00"
         },
         {
             "name": "kirschbaum-development/eloquent-power-joins",

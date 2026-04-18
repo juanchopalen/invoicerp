@@ -95,11 +95,8 @@
     },
     "repositories": [
         {
-            "type": "path",
-            "url": "packages/laravel-world",
-            "options": {
-                "symlink": false
-            }
+            "type": "vcs",
+            "url": "https://github.com/juanchopalen/laravel-world.git"
         }
     ],
     "config": {
